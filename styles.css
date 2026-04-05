@@ -145,7 +145,7 @@ h3 { font-size: 1.2rem; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 160px;
+  height: 120px;
   gap: 1.5rem;
 }
 
@@ -157,7 +157,7 @@ h3 { font-size: 1.2rem; }
 }
 
 .nav__logo-img {
-  height: 160px;
+  height: 120px;
   width: auto;
   display: block;
   object-fit: contain;
@@ -225,7 +225,7 @@ h3 { font-size: 1.2rem; }
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 160px;
+  padding-top: 120px;
   position: relative;
   overflow: hidden;
   background: linear-gradient(160deg, #e8fafd 0%, #fff0f8 50%, #fffde8 100%);
@@ -275,27 +275,25 @@ h3 { font-size: 1.2rem; }
   position: relative;
   z-index: 2;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
   background: var(--white);
   border-radius: 50%;
-  width: 160px;
-  height: 160px;
-  justify-content: center;
+  width: 200px;
+  height: 200px;
   box-shadow: 0 8px 32px rgba(77,217,236,.25);
   border: 3px solid var(--aqua-light);
+  overflow: hidden;
 }
-.blob-ring__title {
-  font-size: 2rem;
-  font-weight: 900;
-  color: var(--aqua-dark);
-  line-height: 1;
+
+.blob-ring__logo {
+  width: 190px;
+  height: 190px;
+  object-fit: contain;
 }
-.blob-ring__sub {
-  font-size: .7rem;
-  font-weight: 800;
-  color: var(--pink);
-  letter-spacing: .05em;
+
+.blob-ring__title, .blob-ring__sub {
+  display: none;
 }
 
 .blob-orbit {
@@ -784,7 +782,7 @@ h3 { font-size: 1.2rem; }
 @media (max-width: 600px) {
   .section           { padding: 3.5rem 0; }
 
-  .nav__links        { display: none; flex-direction: column; position: absolute; top: 160px; left: 0; right: 0; background: rgba(255,251,254,.97); backdrop-filter: blur(12px); border-bottom: 1px solid var(--aqua-light); padding: 1rem 1.5rem 1.5rem; gap: .25rem; }
+  .nav__links        { display: none; flex-direction: column; position: absolute; top: 120px; left: 0; right: 0; background: rgba(255,251,254,.97); backdrop-filter: blur(12px); border-bottom: 1px solid var(--aqua-light); padding: 1rem 1.5rem 1.5rem; gap: .25rem; }
   .nav__links.open   { display: flex; }
   .nav__link         { padding: .65rem 1rem; border-radius: var(--radius-sm); font-size: 1rem; }
   .nav__toggle       { display: flex; }
