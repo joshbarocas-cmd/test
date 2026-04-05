@@ -151,16 +151,31 @@ h3 { font-size: 1.2rem; }
 
 .nav__logo, .footer__logo {
   display: flex;
-  align-items: baseline;
-  gap: 0;
-  font-weight: 900;
-  font-size: 1.35rem;
-  letter-spacing: -.02em;
+  align-items: center;
   text-decoration: none;
+  flex-shrink: 0;
 }
-.logo-sum  { color: var(--aqua-dark); }
-.logo-thing{ color: var(--text); }
-.logo-cute { color: var(--pink); }
+
+.nav__logo-img {
+  height: 52px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  /* keep the bear from getting cropped on the nav bar */
+  margin-top: -4px;
+}
+
+.footer__logo-img {
+  height: 80px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  /* logo has white bg — make it pop on dark footer */
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,.35));
+}
+
+/* keep text logo spans hidden (fallback only) */
+.logo-sum, .logo-thing, .logo-cute { display: none; }
 
 .nav__links {
   display: flex;
