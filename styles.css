@@ -553,6 +553,24 @@ h3 { font-size: 1.2rem; }
 .event-card p { color: var(--text-mid); font-size: .93rem; }
 .event-card .btn { margin-top: .5rem; }
 
+.event-card__highlight {
+  background: var(--yellow-light);
+  border-left: 3px solid var(--yellow);
+  border-radius: var(--radius-sm);
+  padding: .6rem .8rem;
+  font-size: .88rem !important;
+  color: var(--text) !important;
+  font-weight: 600;
+  margin-top: .25rem;
+}
+.event-card__highlight a {
+  color: var(--aqua-dark);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.event-card__highlight a:hover { color: var(--pink); }
+
 /* =============================================
    INSTAGRAM STRIP
    ============================================= */
