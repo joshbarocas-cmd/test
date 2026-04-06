@@ -81,11 +81,11 @@ h3 { font-size: 1.2rem; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
+  width: 2.4rem;
+  height: 2.4rem;
   background: var(--white);
   border-radius: 50%;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   box-shadow: 0 2px 8px rgba(0,0,0,.15);
   flex-shrink: 0;
 }
