@@ -83,10 +83,10 @@ h3 { font-size: 1.2rem; }
   justify-content: center;
   width: 2rem;
   height: 2rem;
-  background: var(--yellow);
+  background: var(--white);
   border-radius: 50%;
   font-size: 1.1rem;
-  box-shadow: 0 2px 8px rgba(255,229,102,.6);
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
   flex-shrink: 0;
 }
 
