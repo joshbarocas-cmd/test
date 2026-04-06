@@ -69,15 +69,15 @@ const form        = document.getElementById('contactForm');
 const formSuccess = document.getElementById('formSuccess');
 
 if (form) {
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     // Basic validation
-    const name     = form.querySelector('#name').value.trim();
-    const email    = form.querySelector('#email').value.trim();
-    const type     = form.querySelector('#orderType').value;
-    const message  = form.querySelector('#message').value.trim();
-    const emailRe  = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const name    = form.querySelector('#name').value.trim();
+    const email   = form.querySelector('#email').value.trim();
+    const type    = form.querySelector('#orderType').value;
+    const message = form.querySelector('#message').value.trim();
+    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!name || !email || !type || !message) {
       showFormError('Please fill in all required fields.');
@@ -88,10 +88,32 @@ if (form) {
       return;
     }
 
-    // Show success state
-    form.hidden = true;
-    formSuccess.hidden = false;
-    formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // Submit to Formspree
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        form.hidden = true;
+        formSuccess.hidden = false;
+        formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send My Request ✨';
+        showFormError('Something went wrong. Please try again or DM me on Instagram!');
+      }
+    } catch {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send My Request ✨';
+      showFormError('Something went wrong. Please try again or DM me on Instagram!');
+    }
   });
 }
 
